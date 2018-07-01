@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Spirax" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1>Songs</h1>
+
+    <div class="song_square">
+      <% @songs.each do |song| %>
+      <div class="element_song">
+      <ul>
+        <img src="https://blog.thrifter.com/sites/thrifter.com/files/styles/w400h400crop/public/apple-music.jpg?itok=tWPtJy84" alt="music-image">
+        <li><%= song.title %></li>
+        <li><%= song.length %></li>
+        <li><%= song.play_count %></li>
+        <% if song.playlist %>
+        <p><% song.playlist.name %></p>
+        <% end %>
+      </ul>
+      </div>
+      <% end %>
+    </div>
+
+  </body>
+</html>
